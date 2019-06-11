@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import uuid from 'uuid';
 
 class NuevaCita extends Component {
    state ={
@@ -43,9 +44,11 @@ class NuevaCita extends Component {
             //detener ejecucion
             return;
         }
-
+         //generar objeto de datos
+         const nuevaCita = {...this.state.cita}
+         nuevaCita.id = uuid();
         // agreagr el state de cita a app
-        this.props.crearNuevaCita(this.state.cita)
+        this.props.crearNuevaCita(nuevaCita)
 
 
 
