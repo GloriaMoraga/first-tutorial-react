@@ -35,12 +35,17 @@ class NuevaCita extends Component {
 
         // extraer los valores del state
         const {mascota, cita, fecha, hora, propietario, sintomas} = this.state.cita;
-
-
-
         //validar que todos los campos este llenos
+        if(mascota === '' || cita === '' || fecha === '' || hora === '' || propietario === '' || sintomas === ''){
+            this.setState({
+                error: true
+            });
+            //detener ejecucion
+            return;
+        }
 
         // agreagr el state de cita a app
+        this.props.crearNuevaCita(this.state.cita)
 
 
 

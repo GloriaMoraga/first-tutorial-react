@@ -9,6 +9,11 @@ class App extends Component{
 
 
   }
+  crearNuevaCita = datos => {
+    console.log(datos)
+
+
+  }
   render() {
      return(
 
@@ -16,7 +21,9 @@ class App extends Component{
         <Header titulo ='Veterinaria'/>
         <div className="row">
            <div className="col-md-10 mx-auto">
-             <NuevaCita />
+             <NuevaCita
+            crearNuevaCita={this.crearNuevaCita}
+             />
            </div>
 
         </div>
